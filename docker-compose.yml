@@ -1,0 +1,17 @@
+services:
+  identity-db:
+    image: postgres:17
+    container_name: budget_identity_db
+    restart: always
+    environment:
+      - POSTGRES_DB=${identity_db}
+      - POSTGRES_USER=${identity_user}
+      - POSTGRES_PASSWORD=${identity_password}
+    ports:
+      - "5432:5432"
+    volumes:
+      - identity_db_data:/var/lib/postgres/data
+
+volumes:
+    identity_db_data:
+    
