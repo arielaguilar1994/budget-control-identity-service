@@ -6,6 +6,6 @@ namespace IdentityService.Infrastructure.Persistence
 {
   public class AppIdentityDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, Guid>
   {
-    public AppIdentityDbContext(DbContextOptions<IdentityDbContext> options): base(options) {}
+    public AppIdentityDbContext(DbContextOptions<AppIdentityDbContext> options): base(options) {}
   }
 }
