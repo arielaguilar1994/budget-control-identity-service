@@ -2,11 +2,11 @@ services:
   identity-db:
     image: postgres:17
     container_name: budget_identity_db
-    restart: always
+    restart: unless-stopped
     environment:
-      - POSTGRES_DB=${identity_db}
-      - POSTGRES_USER=${identity_user}
-      - POSTGRES_PASSWORD=${identity_password}
+      - POSTGRES_DB=identity_db
+      - POSTGRES_USER=admin_identity_db
+      - POSTGRES_PASSWORD=pass_identity_db
     ports:
       - "5432:5432"
     volumes:
